@@ -333,7 +333,7 @@ module.exports = {
     'selector-combinator-space-after': 'always',
     'selector-combinator-space-before': 'always',
     'selector-descendant-combinator-no-non-space': true,
-    'selector-max-class': 2,
+    'selector-max-class': 3,
     'selector-max-combinators': 1,
     'selector-max-empty-lines': 1,
     'selector-max-id': 0,
