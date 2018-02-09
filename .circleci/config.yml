@@ -1,0 +1,72 @@
+version: 2
+jobs:
+  build:
+    docker:
+      - image: circleci/node:8.9
+    steps:
+      - checkout
+
+      - restore_cache:
+          key: v1-dependency-cache-{{ checksum "yarn.lock" }}
+
+      - run:
+          name: install npm dependencies
+          command: |
+            yarn install
+
+      - save_cache:
+          key: v1-dependency-cache-{{ checksum "yarn.lock" }}
+          paths:
+            - "node_modules"
+
+      - run:
+          name: run tests
+          command: |
+            yarn test
+
+  deploy_npm:
+    docker:
+      - image: circleci/node:8.9
+    steps:
+      - checkout
+
+      - restore_cache:
+          key: v1-dependency-cache-{{ checksum "yarn.lock" }}
+
+      - run:
+          name: install npm dependencies
+          command: |
+            yarn install
+
+      - run:
+          name: npm login
+          command: |
+            sudo npm i -g npm-cli-login
+            npm-cli-login -u $NPM_USERNAME -p $NPM_PASSWORD -e $NPM_EMAIL
+
+      - save_cache:
+          key: v1-dependency-cache-{{ checksum "yarn.lock" }}
+          paths:
+            - "node_modules"
+
+      - run:
+          name: upload to npm
+          command: |
+            npm publish
+
+workflows:
+  version: 2
+  build_and_deploy:
+    jobs:
+      - build:
+          filters:
+            tags:
+              only: /.*/
+      - deploy_npm:
+          requires:
+            - build
+          filters:
+            tags:
+              only: /[0-9]+(\.[0-9]+)*/
+            branches:
+              ignore: /.*/

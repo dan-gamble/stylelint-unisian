@@ -1,6 +1,6 @@
 {
   "name": "stylelint-unisian",
-  "version": "0.0.1",
+  "version": "1.0.0",
   "description": "Unisian Stylelint shareable config",
   "files": [
     "index.js"
@@ -16,9 +16,10 @@
     "unisian"
   ],
   "author": "Dan Gamble",
-  "license": "ISC",
+  "license": "MIT",
   "devDependencies": {
-    "jest": "^22.2.2"
+    "jest": "^22.2.2",
+    "stylelint": "^8.4.0"
   },
   "dependencies": {
     "stylelint-order": "^0.8.0"
