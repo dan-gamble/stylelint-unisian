@@ -16,7 +16,7 @@ if [[ $REPLY =~ ^[Yy]$ ]]; then
   git checkout develop
   git flow release start $VERSION
   npm version $VERSION
-  npm run build:all
+  yarn test
   git add .
   git commit --amend --no-edit
   git flow release publish $VERSION
