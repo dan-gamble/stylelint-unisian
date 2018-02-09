@@ -311,7 +311,6 @@ module.exports = {
     'no-invalid-double-slash-comments': true,
     'no-missing-end-of-source-newline': true,
     'unit-case': 'lower',
-    'value-keyword-case': 'lower',
 
     // Keyframe
     'keyframe-declaration-no-important': true,
