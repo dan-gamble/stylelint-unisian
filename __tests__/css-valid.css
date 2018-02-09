@@ -1,0 +1,30 @@
+/*
+|--------------------------------------------------------------------------
+| CSS
+|--------------------------------------------------------------------------
+| @namespace: tst-
+|
+*/
+.tst-Class {
+  --Css_Var: 10px;
+
+  @include TestMixin;
+
+  display: block;
+  width: 10px;
+  height: @height;
+  margin-top: 10px;
+  margin-right: 30px;
+  margin-bottom: 40px;
+  padding: 10px 20px;
+
+  background-size: var(--Css_Var);
+
+  .tst-Nested & {
+    background-color: #fff;
+  }
+
+  .tst-Nested:hover & {
+    background-color: #f00;
+  }
+}
