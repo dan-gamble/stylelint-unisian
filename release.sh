@@ -11,12 +11,12 @@ read -p "Releasing $VERSION - are you sure? (y/n) " -n 1 -r
 
 echo
 if [[ $REPLY =~ ^[Yy]$ ]]; then
+  yarn test
   echo "Releasing $VERSION ..."
   export GIT_MERGE_AUTOEDIT=no
   git checkout develop
   git flow release start $VERSION
   npm version $VERSION
-  yarn test
   git add .
   git commit --amend --no-edit
   git flow release publish $VERSION
