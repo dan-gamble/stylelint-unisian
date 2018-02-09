@@ -18,7 +18,8 @@
   "author": "Dan Gamble",
   "license": "MIT",
   "devDependencies": {
-    "jest": "^22.2.2"
+    "jest": "^22.2.2",
+    "stylelint": "^8.4.0"
   },
   "dependencies": {
     "stylelint-order": "^0.8.0"
