@@ -1,6 +1,6 @@
 {
   "name": "stylelint-unisian",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Unisian Stylelint shareable config",
   "files": [
     "index.js"
