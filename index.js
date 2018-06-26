@@ -271,7 +271,6 @@ module.exports = {
     'function-comma-space-before': 'never',
     'function-linear-gradient-no-nonstandard-direction': true,
     'function-max-empty-lines': 0,
-    'function-name-case': 'lower',
     'function-parentheses-newline-inside': 'always-multi-line',
     'function-parentheses-space-inside': 'never-single-line',
     'function-url-quotes': 'always',
@@ -332,11 +331,11 @@ module.exports = {
     'selector-combinator-space-before': 'always',
     'selector-descendant-combinator-no-non-space': true,
     'selector-max-class': 3,
-    'selector-max-combinators': 1,
+    'selector-max-combinators': 2,
     'selector-max-empty-lines': 1,
     'selector-max-id': 0,
     'selector-max-specificity': ['0,3,0', {
-      ignoreSelectors: ['@media']
+      ignoreSelectors: ['@media', '::before', ':before', '::after', ':after']
     }],
     'selector-max-type': [0, {
       ignoreTypes: ['svg']
