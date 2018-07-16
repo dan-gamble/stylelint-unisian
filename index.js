@@ -20,6 +20,24 @@ module.exports = {
         'name': 'media',
         'hasBlock': true
       },
+      {
+        'type': 'at-rule',
+        'name': 'include',
+        'parameter': 'breakpoint',
+        'hasBlock': true
+      },
+      {
+        'type': 'at-rule',
+        'name': 'include',
+        'parameter': 'breakpoint-gte',
+        'hasBlock': true
+      },
+      {
+        'type': 'at-rule',
+        'name': 'include',
+        'parameter': 'breakpoint-lte',
+        'hasBlock': true
+      },
       'rules'
     ],
     'order/properties-order': [
